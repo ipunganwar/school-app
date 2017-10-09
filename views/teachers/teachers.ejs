@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TEACHERS DATA</title>
+  </head>
+  <body>
+    <h1>TEACHERS DATA</h1>
+    <table>
+      <tr>
+        <td><a href="/">Home</a></td>
+        <td><a href="/teacher">Teachers</a></td>
+        <td><a href="/student">Students</a></td>
+        <td><a href="/subject">Subjects</a></td>
+      </tr>
+    </table>
+
+   <table border="1px" ">
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Option</th>
+    </tr>
+    <% dataTeacher.forEach((row) => { %>
+      <tr>
+        <td><%= row.id %></td>
+        <td><%= row.first_name %></td>
+        <td><%= row.last_name %></td>
+        <td><%= row.email %></td>
+        <td><% if(row.Subject) { %>
+          <%= row.Subject.subject_name %>
+          <% }else{ %>
+          unassigned
+          <% } %>    
+        </td>
+        <td>
+          <a href="/teachers/editTeacher/<%= row.id %>">Edit</a>
+          <a> | </a>
+          <a href="/teachers/delete/<%= row.id %>">Delete</a>
+        </td>
+      </tr>
+    <% })%>
+  </table> 
+
+  <h4><a href="/add">Add Teacher</a></h4>
+  </body>
+</html>

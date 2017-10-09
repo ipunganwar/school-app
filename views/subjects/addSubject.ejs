@@ -1,0 +1,30 @@
+<%- include partials/header %>
+<body>
+<%- include partials/menu %>
+
+<div class="container">
+  <h2>Add Subject Data</h2>
+
+  <%if(errors){%>
+
+    <div class="alert alert-danger">
+      <ul>
+        <%errors.forEach((error)=>{%>
+            <li><%= error.message %></li>  
+        <%})%>
+      </ul>
+    </div>
+
+  <%}%>
+
+  <form action="add" method="post">
+    <div class="form-group">
+      <label for="email">Subject Name:</label><br>
+      <input type="text" name="subject_name">
+    </div>
+    <button type = "submit" name class="btn btn-default">Add Subject</button>
+  </form>
+</div>
+
+</body>
+</html>
