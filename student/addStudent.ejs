@@ -1,0 +1,27 @@
+<%- include ../partials/header%>
+  <body>
+    <%- include ../partials/menu%>
+
+    <% if (typeof errors !== 'undefined') { %>
+      <h4>PERINGATAN : </h4>
+      <ul>
+        <% errors.forEach((error) => { %>
+            <li><%= error.message %></li>
+        <% }) %>
+      </ul>
+    <% } %>
+
+    <form action="/student/add" method="POST">
+      First name:<br>
+      <input type="text" name="firstName" value="">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastName" value="">
+      <br>
+      Email:<br>
+      <input type="text" name="email" value="">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form> 
+  </body>
+</html>

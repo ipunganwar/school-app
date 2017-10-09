@@ -1,0 +1,33 @@
+<%- include ../partials/header%>
+  <body>
+    <%- include ../partials/menu%>
+
+   <table border="1px" ">
+    <tr>
+      <th>First Name</th>
+      <td><%= dataStudents.firstName %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= dataStudents.lastName %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= dataStudents.email %></td>
+    </tr>
+  </table>
+  <br>
+  <form action="/student/addsubject/<%= dataStudents.id %>" method="POST">
+    Choose Subject:<br>
+    <input type="hidden" name="StudentId" value="<%= dataStudents.id %>">
+    <select name="SubjectId">
+      <% dataSubjects.forEach((Subject) => { %>
+        <option value="<%= Subject.id %>"><%= Subject.subjectName %></option>
+      <% })%>
+    </select><br> 
+    <br>
+    <input type="submit" value="Submit">
+  </form> 
+
+  </body>
+</html>

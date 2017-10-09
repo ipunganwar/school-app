@@ -1,0 +1,26 @@
+<%- include ../partials/header%>
+  <body>
+    <%- include ../partials/menu%>
+    <h2>Teacher Edit</h2>
+
+    <form action="/teacher/edit/<%= dataTeachers.id %>" method="POST">
+      First name:<br>
+      <input type="text" name="firstName" value="<%= dataTeachers.firstName %>">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastName" value="<%= dataTeachers.lastName %>">
+      <br>
+      Email:<br>
+      <input type="text" name="email" value="<%= dataTeachers.email %>">
+      <br>
+      Subject:<br>
+      <select name="SubjectId">
+        <% dataSubjects.forEach((Subject) => { %>
+          <option value="<%= Subject.id %>" <%= (dataTeachers.SubjectId === Subject.id) ? "selected" : "" %> > <%= Subject.subjectName %></option>
+        <% })%>
+      </select><br> 
+      <br>
+      <input type="submit" value="Submit">
+    </form> 
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<%- include ../partials/header %>
+<body>
+<%- include ../partials/menu %>
+
+   <table border="1px" ">
+    <tr>
+      <th>ID</th>
+      <th>Subject Name</th>
+      <th>Teacher</th>
+      <th>Actions</th>
+    </tr>
+    <% dataSubjects.forEach((row) => { %>
+      <tr>
+        <td><%= row.id %></td>
+        <td><%= row.subjectName %></td>
+        <td>
+          <ol style="margin: 0">
+          <% for(let i=0; i<dataSubjects.length; i++) { %>
+          <li><%= row.Teachers[i].firstName %></li>
+          <% } %>
+          </ol> 
+        </td>
+        <td><a href="/subject/enrolledstudents/<%= row.id %>">Enrolled Students</a></td>
+      </tr>
+    <% })%>
+  </table> 
+
+  <h4><a href="/subject/add">Add Subject</a></h4>
+  </body>
+</html>

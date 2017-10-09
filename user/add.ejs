@@ -1,0 +1,23 @@
+<%- include ../partials/header%>
+  <body>
+    <%- include ../partials/menu%>
+    <h2>Add New User</h2>
+
+    
+  <form action="/user/add" method="POST">
+    Username:<br>
+    <input type="text" name="username" >
+    <br>
+    Password:<br>
+    <input type="text" name="password" >
+    <br>
+    <select name="role">
+      <option value="teacher">Teacher</option>
+      <option value="academic">Academic</option>
+      <option value="headmaster">Headmaster</option>
+    </select>
+    <input type="submit" value="Submit">
+  </form> 
+
+  </body>
+</html>

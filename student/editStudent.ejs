@@ -1,0 +1,18 @@
+<%- include ../partials/header%>
+  <body>
+    <%- include ../partials/menu%>
+
+    <form action="/student/edit/<%= dataStudents.id %>" method="POST">
+      First name:<br>
+      <input type="text" name="firstName" value="<%= dataStudents.firstName %>">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastName" value="<%= dataStudents.lastName %>">
+      <br>
+      Email:<br>
+      <input type="text" name="email" value="<%= dataStudents.email %>">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form> 
+  </body>
+</html>

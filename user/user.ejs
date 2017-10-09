@@ -1,0 +1,23 @@
+<%- include ../partials/header%>
+  <body>
+    <%- include ../partials/menu%>
+<table border="1px" ">
+    <tr>
+      <th>id</th>
+      <th>username</th>
+      <th>password</th>
+      <th>role</th>
+      <th>salt</th>
+    </tr>
+    <% data.forEach((row) => { %>
+      <tr>
+        <td><%= row.id %></td>
+        <td><%= row.username %></td>
+        <td><%= row.password %></td>
+        <td><%= row.role %></td>
+        <td><%= row.salt %></td>
+      </tr>
+    <%})%>
+</table> 
+  </body>
+</html>

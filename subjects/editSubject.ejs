@@ -1,0 +1,22 @@
+<%- include ../partials/header %>
+<body>
+<%- include ../partials/menu %>
+    <h1>SUBJECT DATA</h1>
+    
+    <table>
+      <tr>
+        <td><a href="/">Home</a></td>
+        <td><a href="/teacher">Teachers</a></td>
+        <td><a href="/student">Students</a></td>
+        <td><a href="/subject">Subjects</a></td>
+      </tr>
+    </table>
+
+    <form action="/subject/edit/<%= dataSubjects.id %>" method="POST">
+      Subject name:<br>
+      <input type="text" name="subjectName" value="<%= dataSubjects.subjectName %>">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form> 
+  </body>
+</html>
